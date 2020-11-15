@@ -1,13 +1,20 @@
 <?=    $this->Html->css('login') ?>
 
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-<!------ Estilos de bootstrap ---------->
-
 <div class="container">
 
-<div class="row" style="margin-top:20px">
+<div class="loginbox">
+	<h1>Ingresar al sitio</h1>
+	<div class="textbox">
+		<input type="text" placeholder="email" name="" value="">
+	</div>
+	<div class="textbox">
+		<input type="text" placeholder="password" name="" value="">
+	</div>
+
+	<input class="btn" type="button" value="Sign In" name="">
+</div>
+
+<div class="row">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
         <?= $this->Flash->render('auth') ?>
         <?= $this->Form->create() ?>

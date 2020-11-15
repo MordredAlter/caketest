@@ -27,22 +27,27 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css(['bootstrap.min.css', 'estilos.css']) ?>
-    <?= $this->Html->script(['jquery-3.5.1.min.js', 'bootstrap.min.js']) ?>
+    <?= $this->Html->css('https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css') ?>
+    <?= $this->Html->css('styles.css') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+
 </head>
 <body>
     
     <?= $this->element('menu') ?>
 
     <?= $this->Flash->render() ?>
-    <div class="container clearfix">
+    <div class="container">
         <?= $this->fetch('content') ?>
     </div>
     <footer>
     </footer>
+
+    <?= $this->Html->script('https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.min.js') ?>
+    <?= $this->Html->script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js') ?>
+
 </body>
 </html>
