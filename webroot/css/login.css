@@ -10,7 +10,7 @@
     background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
   }
 
-.loginbox{
+.loginbox {
     width: 280px;
     position: absolute;
     top: 20%;
@@ -19,7 +19,7 @@
     color: white;
 }
 
-.loginbox h1{
+.loginbox h1 {
     float: left;
     font-size: 40px;
     border-bottom: 6px solid #00b100;
