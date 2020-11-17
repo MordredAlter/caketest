@@ -1,4 +1,14 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 
+    li, button {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        text-decoration: none;
+    }
+
+</style>
 
 <nav class="navbar navbar-inverse nav-fixed-top nav-users">
     <div class="container">
@@ -31,9 +41,7 @@
                 <?php endif; ?>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        
                         <?= $this->Html->link('Cerrar Sesion', ['controller' => 'Users', 'action' => 'logout']) ?>
-                        
                     </li>
                 </ul>
                 <?php else: ?>

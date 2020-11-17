@@ -78,7 +78,7 @@ class UsersTable extends Table
             ->scalar('password')
             ->maxLength('password', 255)
             ->requirePresence('password', 'create')
-            ->notEmptyString('password');
+            ->notEmptyString('password', 'Establezca una contraseña', 'create');
 
         $validator
             ->scalar('role')
@@ -105,5 +105,19 @@ class UsersTable extends Table
         $rules->add($rules->isUnique(['email']));
 
         return $rules;
+    }
+
+    public function recoverPassword($id)
+    {
+        $user = $this->get($id);
+        return $user->password;
+    }
+
+    public function beforeDelete($event, $entity, $options)
+    {
+        if($entity->role == 'admin'){
+            return false;
+        }
+        return true;
     }
 }

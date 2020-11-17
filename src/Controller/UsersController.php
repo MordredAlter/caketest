@@ -39,6 +39,10 @@ class UsersController extends AppController
                 $this->Flash->error('Datos Invalidos', ['key' => 'auth']);
             }
         }
+
+        if($this->Auth->user()){
+            return $this->redirect(['controller' => 'Users', 'action' => 'home']);
+        }
     }
 
     public function logout(){
@@ -92,27 +96,38 @@ class UsersController extends AppController
 
     public function edit($id)
     {
-        $user = $this->Users->findById($id)->firstOrFail();
-        if ($this->request->is(['post', 'put'])) {
-            $this->Users->patchEntity($user, $this->request->getData());
-            if ($this->Users->save($user)) {
+        $user = $this->Users->get($id);
+
+        if ($this->request->is(['post', 'put', 'patch'])) 
+        {
+            $user = $this->Users->patchEntity($user, $this->request->data);
+            if ($this->Users->save($user)) 
+            {
                 $this->Flash->success(__('Usuario actualizado'));
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('Ocurrio un error al actualizar usuario'));
+            else
+            {
+                $this->Flash->error(__('Ocurrio un error al actualizar usuario'));
+            }
         }
 
         $this->set(compact('user'));
     }
 
-    public function delete($id)
+    public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
 
-        $user = $this->Users->findById($id)->firstOrFail();
-        if ($this->Users->delete($user)) {
-            $this->Flash->success(__('El Usuario {0} ha sido borrado', $user->first_name));
-            return $this->redirect(['action' => 'index']);
+        $user = $this->Users->get($id);
+        if ($this->Users->delete($user)) 
+        {
+            $this->Flash->success(__('El Usuario {0} ha sido eliminado', $user->first_name));
         }
+        else
+        {
+            $this->Flash->error(__('Ha ocurrido un error. El Usuario {0} no ha sido eliminado', $user->first_name));
+        }
+        return $this->redirect(['action' => 'index']);
     }
 }

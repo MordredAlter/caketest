@@ -29,7 +29,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
     <?= $this->Html->css('https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css') ?>
     <?= $this->Html->css('styles.css') ?>
-    <?= $this->Html->css('login.css') ?>
+    <?= $this->Html->css('https://use.fontawesome.com/releases/v5.5.0/css/all.css') ?>
+    
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
