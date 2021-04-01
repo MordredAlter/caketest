@@ -1,3 +1,7 @@
+# Proyecto de Prueba en CakePHP
+
+Proyecto de prueba usado para conocer el framework de CakePHP y experimentar con sus herramientas
+
 # CakePHP Application Skeleton
 
 [![Build Status](https://img.shields.io/travis/cakephp/app/master.svg?style=flat-square)](https://travis-ci.org/cakephp/app)
